@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/todo_Home_Fragment">
+
+    <fragment
+        android:id="@+id/todo_Home_Fragment"
+        android:name="com.example.todo_notes.TodoHomeFragment"
+        android:label="fragment_todo__home_"
+        tools:layout="@layout/fragment_todo__home_" >
+        <action
+            android:id="@+id/action_todo_Home_Fragment_to_todoInsertFragment"
+            app:destination="@id/todoInsertFragment" />
+        <action
+            android:id="@+id/action_todo_Home_Fragment_to_editFragment"
+            app:destination="@id/editFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/todoInsertFragment"
+        android:name="com.example.todo_notes.TodoInsertFragment"
+        android:label="fragment_todo_insert"
+        tools:layout="@layout/fragment_todo_insert" >
+        <action
+            android:id="@+id/action_todoInsertFragment_to_todo_Home_Fragment"
+            app:destination="@id/todo_Home_Fragment"
+            app:popUpTo="@id/todoInsertFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editFragment"
+        android:name="com.example.todo_notes.EditFragment"
+        android:label="fragment_edit"
+        tools:layout="@layout/fragment_edit" >
+        <action
+            android:id="@+id/action_editFragment_to_todo_Home_Fragment"
+            app:destination="@id/todo_Home_Fragment"
+            app:popUpTo="@id/editFragment" />
+    </fragment>
+</navigation>
